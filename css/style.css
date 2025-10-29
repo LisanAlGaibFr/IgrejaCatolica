@@ -1,0 +1,475 @@
+/*BODY*/
+body {
+   background-image: url('../images/fundo.jpg'); 
+    background-repeat: no-repeat;              
+    background-size: cover;                    
+    background-position: center; 
+}
+
+/* Background específico para a página trindade.html */
+body.trindade {
+  background-image: url('../images/fundoT.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Background específico para a página maria.html */
+body.maria {
+  background-image: url('../images/fundoM.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Aplica o background da primeira seção em full-screen para páginas específicas
+   Isso garante que a imagem ocupe toda a viewport na primeira seção, evitando
+   que pareça cortada ou apareça apenas parcialmente. */
+body.trindade .site-content > section:first-of-type {
+  background-image: url('../images/fundoT.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.maria .site-content > section:first-of-type {
+  background-image: url('../images/fundoM.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* IMAGEM */
+img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-width: 600px; 
+  width: 100%;
+}
+.bottom-images {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* você pode ajustar o tamanho */
+  }
+
+
+/* PARÁGRAFOS */
+p {
+  color: #f0e73c;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* BOTÃO */
+button {
+  border: 2px solid #ffd700;
+  background: black;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.4s;
+  display: block;
+  margin: 12px auto;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button img {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Regras específicas para alinhamento à esquerda sem afetar o footer */
+.align-left {
+  text-align: left;
+  padding-left: 150px;
+}
+.align-left .img-btn {
+  display: inline-block;
+  margin: 0.2px 0;
+  margin-left: 8px; /* desloca a imagem um pouco para a direita */
+}
+
+/* Regras para alinhar à direita (espelho da .align-left) */
+.align-right {
+  text-align: right;
+  padding-right: 150px;
+}
+.align-right .img-btn {
+  display: inline-block;
+  margin: 0.2px 0;
+  margin-right: 8px; /* desloca a imagem um pouco para a esquerda */
+}
+
+/* Alinhar título com centro da imagem (mesma linha) */
+.media-row {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  gap: 16px;
+}
+
+.media-title {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.img-wrap {
+  display: inline-block;
+}
+
+/* Empilha título sobre a imagem e centraliza */
+.figure {
+  display: inline-block;
+  text-align: center;
+}
+.figure .media-title {
+  margin-bottom: 8px;
+}
+
+/* Caixa de fundo para textos */
+.text-bg {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f0e73c;
+  padding: 8px 12px;
+  border-radius: 6px;
+  line-height: 1.4;
+}
+
+/* Caixa que ocupa a largura do container (empilhada) */
+.text-bg-block {
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f0e73c;
+  padding: 12px 16px;
+  border-radius: 6px;
+  line-height: 1.4;
+  max-width: 900px; /* limite opcional para não esticar demais */
+  margin: 6px auto; /* empilha e centraliza horizontalmente (reduzido) */
+  text-align: center;
+}
+
+/* layout duas colunas para imagens 2 e 3 */
+.two-column {
+  display: flex;
+  gap: 36px; /* afasta um pouco mais as imagens */
+  justify-content: center; /* centraliza o conjunto */
+  align-items: flex-start;
+  margin-top: 24px;
+}
+.two-column .col {
+  flex: 1 1 320px;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+}
+.left-col { align-items: flex-start; }
+.right-col { align-items: flex-end; }
+
+/* Reset e controle de espaçamento entre sections
+   evita espaços em branco causados por margin-collapse de h1/p */
+section {
+  margin: 0; /* remove margem padrão entre sections */
+}
+.site-content > section {
+  padding: 0; /* remove espaçamento extra entre sections */
+  overflow: visible; /* evita efeitos indesejados de margin collapse */
+}
+.site-content > section:last-child {
+  padding-bottom: 0;
+}
+
+/* garantir que a .bg-second comece sem espaço extra */
+.bg-second {
+  margin-top: 0;
+  padding-top: 0; /* sem espaço extra no topo da segunda seção */
+}
+
+@media (max-width: 900px) {
+  .two-column { flex-direction: column; align-items: center; }
+  .left-col, .right-col { align-items: center; text-align: center; }
+}
+
+@media (max-width: 700px) {
+  /* em telas pequenas, empilha novamente */
+  .media-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .align-left {
+    padding-left: 0;
+    text-align: center;
+  }
+  .align-left .img-btn { margin-left: 0; }
+}
+.img-btn {
+  max-width: 500px; /* largura padrão para botões com imagem */
+  width: 100%;
+}
+
+.align-left .img-btn {
+  max-width: 500px; /* tornar a imagem 2 com as mesmas medidas da imagem 1 */
+}
+
+.align-right .img-btn {
+  max-width: 500px; /* mesma medida para a imagem à direita */
+}
+
+.img-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+/* garantir proporção idêntica para as imagens 2 e 3 */
+.two-column .col .img-wrap {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 3; /* altera conforme desejar (ex.: 16/9) */
+  overflow: hidden;
+}
+.two-column .col .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* garante mesma proporção visual preenchendo o espaço */
+  display: block;
+}
+
+/* alinhamentos finos: força a imagem da direita para borda direita do column */
+.right-col .img-wrap { margin-left: auto; }
+.left-col .img-wrap { margin-right: auto; }
+
+/* NAVBAR */
+nav {
+  background: #333;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #555;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #333;      
+    color: #fff;               
+    text-align: center;          
+    padding: 5px 2px;          
+    font-size: 16px;             
+    border-top: 2px solid #ffd700; 
+}
+
+footer a {
+    color: #ffd700;              
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;                 
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 14px;
+        padding: 15px 5px;
+    }
+}
+
+/* Segunda seção com background distinto */
+.bg-second {
+  background-image: url('../images/fundoM2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.bg-second2 {
+  background-image: url('../images/fundo2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.bg-third3 {
+  background-image: url('../images/fundo3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.bg-fourth4 {
+  background-image: url('../images/fundo4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.bg-second {
+  background-image: url('../images/fundoM2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.bg-third {
+  background-image: url('../images/fundoM3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.bg-fourth {
+  background-image: url('../images/fundoM4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+  
+}
+
+.bg-fifth {
+  background-image: url('../images/fundo88.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ocupa a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+/* Centralizar títulos das seções com background */
+.site-content > section:first-of-type h1,
+.bg-second h2,
+.bg-third h2,
+.bg-fourth h2,
+.bg-aparecida h2 {
+  text-align: center;
+  margin: 0 auto 12px;
+  display: block;
+}
+
+/* Nova seção separada com fundo próprio e uma imagem placeholder */
+.bg-new {
+  background-image: url('../images/fundoNovo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh; /* ajuste conforme desejar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.bg-new .inner-img {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bg-new .inner-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  display: inline-block;
+}
+
