@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>A Igreja Católica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>  
+  <main class="site-content">
+    <section>
+      <h1 style="text-align: center; color: rgb(237, 192, 42); font-family: Arial, sans-serif;">Santissima Trindade</h1>
+      <div class="centered">
+        <button type="button" class="img-btn" data-url="trindade.html">
+          <img src="images/trindade.jpg" alt="Santíssima Trindade"/>
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-column">
+        <div class="col left-col">
+          <div class="figure">
+            <h2 class="media-title" style="color: rgb(237, 192, 42); font-family: Arial, sans-serif;">A Virgem Maria</h2>
+            <div class="img-wrap">
+              <button type="button" class="img-btn" data-url="maria.html">
+                <img src="images/maria.jpg" alt="Títulos da Virgem Maria"/>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col right-col">
+          <div class="figure">
+            <h2 class="media-title" style="color: rgb(237, 192, 42); font-family: Arial, sans-serif;">Santos</h2>
+            <div class="img-wrap">
+              <button type="button" class="img-btn" data-url="santos.html">
+                <img src="images/tomas.jpg" alt="Santos"/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <section class="bg-new">
+  <div class="two-column">
+    <div class="col left-col">
+      <h2 class="media-title" style="color: rgb(237, 192, 42); font-family: Arial, sans-serif;">O Papa e a Santa Sé</h2>
+      <div class="img-wrap">
+        <button type="button" class="img-btn" data-url="papa.html">
+          <img src="images/placeholder.jpg" alt="O Papa e a Santa Sé" />
+        </button>
+      </div>
+    </div>
+    <div class="col right-col">
+      <h2 class="media-title" style="color: rgb(237, 192, 42); font-family: Arial, sans-serif;">Os Sacramentos</h2>
+      <div class="img-wrap">
+        <button type="button" class="img-btn" data-url="sacramentos.html">
+          <img src="images/sacramentos.jpg" alt="Os Sacramentos" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+  <footer>
+    <p>&copy; 2025 - Site oficial por Mateus Giuseppe</p>
+  </footer>
+  <script>
+    document.addEventListener('click', function (e) {
+  const btn = e.target.closest && e.target.closest('.img-btn');
+  if (!btn) return;
+
+  const url = btn.getAttribute('data-url');
+  if (!url) return;
+
+  window.location.href = url;
+});
+
+
+
+  </script>
+
+  
+</body>
+</html>
